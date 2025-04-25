@@ -6,16 +6,15 @@ This template should help get you started developing with Vue 3 in Vite.
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Prerequisites
-Make sure you have the following installed:
-Node.js (v16 or later) and npm
-PHP (v7.4 or later)
-Composer (for installing PHPMailer)
-A modern web browser (e.g., Chrome, Firefox)
+<ul>
+  <li>Make sure you have the following installed:</li>
+  <li>Node.js (v16 or later) and npm</li>
+  <li>PHP (v7.4 or later)</li>
+  <li>Composer (for installing PHPMailer)</li>
+  <li>A modern web browser (e.g., Chrome, Firefox)</li>
+</ul>
 
 
 ## Project Structure
