@@ -19,6 +19,7 @@ A modern web browser (e.g., Chrome, Firefox)
 
 
 ## Project Structure
+<pre>
 project-root/
 │
 ├── backend/              # PHP scripts (contact.php)
@@ -30,7 +31,7 @@ project-root/
 │
 ├── README.md
 └── ...
-
+</pre>
 
 ## Project Setup
 Set up the frontend (Vue 3)
