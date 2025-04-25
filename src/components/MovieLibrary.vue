@@ -1,19 +1,24 @@
 <template>
   <section class="movie-library px-4 py-5 bg-dark text-white min-vh-100">
-    <!-- this is header with title and search sections-->
+    <!-- Header with title and search sections -->
     <div
       class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-3"
       ref="header"
     >
       <h2 class="h4 mb-2 mb-md-0">Collect your favourites</h2>
-      <input
-        type="text"
-        v-model="searchQuery"
-        @input="searchMovies"
-        @keydown.enter.prevent
-        placeholder="Search Movies..."
-        class="form-control search-input"
-      />
+      <div class="search-container position-relative mt-2 mt-md-0">
+        <input
+          type="text"
+          v-model="searchQuery"
+          @input="searchMovies"
+          @keydown.enter.prevent
+          placeholder="Search Movies..."
+          class="form-control search-input pe-5"
+        />
+        <span class="search-icon position-absolute top-50 end-0 translate-middle-y me-3">
+          <BsSearch style="width: 1.2rem; height: 1.2rem" />
+        </span>
+      </div>
     </div>
 
     <hr class="bg-secondary" style="height: 7px; border: none" />
@@ -30,10 +35,11 @@
 
     <!-- Search Results -->
     <div class="mt-5" ref="results">
+      <hr class="bg-secondary" style="height: 7px; border: none" />
       <h4 class="text-white">Search Results</h4>
       <div class="row g-4">
         <div class="col-12 col-sm-6 col-md-4" v-for="movie in searchResults" :key="movie.id">
-          <div class="card bg-dark text-white h-100">
+          <div class="card bg-dark text-white h-100 position-relative">
             <img :src="movie.image" class="card-img-top" alt="movie.title" />
             <div class="card-body">
               <h5 class="card-title">{{ movie.title }}</h5>
@@ -53,6 +59,7 @@
 import { ref, computed, onMounted, nextTick } from 'vue'
 import { gsap } from 'gsap'
 import MovieCard from './MovieCard.vue'
+import { BsSearch } from '@kalimahapps/vue-icons'
 
 const searchQuery = ref('')
 const staticMovies = ref([
@@ -112,7 +119,6 @@ function removeMovie(id) {
 
 const allMovies = computed(() => [...staticMovies.value, ...addedMovies.value])
 
-//this is animation for header and movie grid
 const movieGrid = ref(null)
 const header = ref(null)
 const results = ref(null)
@@ -154,5 +160,15 @@ onMounted(async () => {
 
 .movie-library input::placeholder {
   color: #aaa;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-icon {
+  pointer-events: none;
+  color: #888;
 }
 </style>

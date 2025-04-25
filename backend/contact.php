@@ -55,7 +55,7 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; 
     $mail->SMTPAuth = true;
-    
+
     // Email address to send from. this email usually I used for the send emails when application is running on localhost.
     //this is not my real email address(udaranilupul01@gmail.com). I used this email address for testing purpose only.
     $mail->Username = 'syncrosoftware1.0@gmail.com'; 
@@ -65,8 +65,8 @@ try {
 
     // Email content
     $mail->setFrom('syncrosoftware1.0@gmail.com', 'udaranilupul01@gmail.com');
-    $mail->addAddress('udaranilupul02@gmail.com');
-    $mail->addAddress('udaranilupul03@gmail.com');
+    $mail->addAddress('dumidu.kodithuwakku@ebeyonds.com');
+    $mail->addAddress('prabhath.senadheera@ebeyonds.com');
 
     $mail->Subject = "New Contact Form Submission from $firstName $lastName";
     $mail->Body = "Name: $firstName $lastName\nEmail: $email\nPhone: $phone\nMessage:\n$message";
